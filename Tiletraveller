@@ -1,0 +1,93 @@
+def tile_1_1 ():
+    print ("You can travel: (N)orth.")
+    direction = input("Direction: ").lower()
+    if direction == "n":
+        tile_1_2()
+    else:
+        print("Not a valid direction!")
+        tile_1_1()
+
+def tile_1_2():
+    print ("You can travel: (N)orth or (E)ast or (S)outh.")
+    direction = input("Direction: ").lower()
+    if direction == "n":
+        tile_1_3()
+    elif direction == "e":
+        tile_2_2()
+    elif direction == "s":
+        tile_1_1()     
+    else:
+        print("Not a valid direction!")
+        tile_1_2()
+
+def tile_1_3():
+    print ("You can travel: (E)ast or (S)outh.")
+    direction = input("Direction: ").lower()
+    if direction == "e":
+        tile_2_3()
+    elif direction == "s":
+        tile_1_2 ()     
+    else:
+        print("Not a valid direction!")   
+        tile_1_3()
+
+def tile_2_1():
+    print ("You can travel: (N)orth.")
+    direction = input("Direction: ").lower()
+    if direction == "n":
+        tile_2_2()
+    else:
+        print("Not a valid direction!")   
+        tile_2_1()                
+
+def tile_2_2():
+    print ("You can travel: (S)outh or (W)est.")
+    direction = input("Direction: ").lower()
+    if direction == "s":
+       tile_2_1()
+    elif direction == "w":
+        tile_1_2 ()     
+    else:
+        print("Not a valid direction!")   
+        tile_2_2()
+
+
+def tile_2_3():
+    print ("You can travel: (E)ast or (W)est.")
+    direction = input("Direction: ").lower()
+    if direction == "e":
+        tile_3_3()
+    elif direction == "w":
+        tile_1_3()    
+    else:
+        print("Not a valid direction!")   
+        tile_2_3()
+
+
+def tile_3_2():
+    print ("You can travel: (N)orth or (S)outh.")
+    direction = input("Direction: ").lower()
+    if direction == "n":
+        tile_3_3()
+    elif direction == "s":
+        tile_3_1()    
+    else:
+        print("Not a valid direction!")   
+        tile_3_2()
+
+
+def tile_3_3():
+    print ("You can travel: (S)outh or (W)est.")
+    direction = input("Direction: ").lower()
+    if direction == "s":
+        tile_3_2()
+    elif direction == "w":
+        tile_2_3()    
+    else:
+        print("Not a valid direction!")   
+        tile_3_3        
+
+def tile_3_1():
+    print("Victory!")
+
+tile_1_1()
